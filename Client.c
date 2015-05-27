@@ -1,7 +1,7 @@
 /****************************************************************************/
 /* Implementación de funciones del cliente (rcftpclient)      
  * Autor: Luis Jesús Pellicer 
- * Descripción: Code developed for the work of the subject Computer Networks*/
+ * Descripción: Code developed for the work of the subject Computer Networks in University of Zaragoza*/
 /****************************************************************************/
 
 #include <sys/types.h>
