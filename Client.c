@@ -1,7 +1,8 @@
 /****************************************************************************/
-/* Implementación de funciones del cliente (rcftpclient)      
+/* rcftp client- Stop & Wait and Go Back N   
  * Autor: Luis Jesús Pellicer 
- * Descripción: Code developed for the work of the subject Computer Networks in University of Zaragoza*/
+ * Description : Code developed for the work of the subject Computer Networks in University of Zaragoza
+ * Version: First version developed without considering aspects of code extension or efficiency due to the short time for implementation */
 /****************************************************************************/
 
 #include <sys/types.h>
