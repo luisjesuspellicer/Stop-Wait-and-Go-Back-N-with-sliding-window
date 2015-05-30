@@ -1806,35 +1806,3 @@ void alg_basico(int sock,char * remote,int verb) {
 		}
 	}
 }
-/**************************************************************************/
-/*  imprime direccion */
-/**************************************************************************/
-void print_peer(struct sockaddr_storage caddr) {
-	struct sockaddr_in * caddr_ipv4;
-	struct sockaddr_in6 * caddr_ipv6;
-	void *addr;
-	char *ipver, ipstr[INET6_ADDRSTRLEN];
-	unsigned short port;
-	
-	if (caddr.ss_family== AF_INET) {//IPv4
-        caddr_ipv4=((struct sockaddr_in *)((struct sockaddr *)&caddr));
-        addr = &(caddr_ipv4->sin_addr);
-        port = htons(caddr_ipv4->sin_port); 
-		/*convierte el entero corto sin signo hostshort desde el orden de bytes del host al de la red */
-        ipver = "IPv4";
-    }
-    else if (caddr.ss_family== AF_INET6) {//IPv6
-    	caddr_ipv6=((struct sockaddr_in6 *)((struct sockaddr *)&caddr));
-        addr = &(caddr_ipv6->sin6_addr);
-        port = htons(caddr_ipv6->sin6_port);
-        ipver = "IPv6";
-    }
-    else{
-	 	fprintf(stderr, "Error: protoco desconocido");
-	 	exit(1);
-    }
-    //convierte la ip a una string y la imprime
-    inet_ntop(caddr.ss_family, addr, ipstr, sizeof ipstr);
-    printf("Comunicación con el equipo %s usando %s a través del puerto %d\n", ipstr,ipver,port);
-    return;
-}
